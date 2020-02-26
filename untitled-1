@@ -1,8 +1,11 @@
 Nya namn
-content ---> viewcontanier
+content ---> ViewContanier
 sectionItem ---> NavigationItem
 Header ---> Navbar
 
 Nya komponenter
 DetailView
-MasterView/MainView
+MasterView
+
+Tänk på att innehållet i "ViewContainer" behöver flyttas till "MasterView"
+så att "ViewContainer" bara ansvarar för vilken vy som ska renderas.

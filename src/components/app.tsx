@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from './layout';
+import Layout from './Layout';
 
 /**
  * Application top level component. This is a good place for future
