@@ -1,16 +1,19 @@
 import React, { CSSProperties } from 'react';
 
+interface Props {
+    onClickHeader: () => void
+}
 /** React function component */
-export default function Navbar() {
+export default function Navbar(props: Props) {
 
     return (
-        <div style={navbar}>
-            <h1 style={navbarItem}>React Playground</h1>
+        <div style={header}>
+            <h1 onClick={props.onClickHeader}style={headerItem}>React Playground</h1>
         </div>
     );
 }
 
-const navbar: CSSProperties = {
+const header: CSSProperties = {
     height: '4em',
     background: 'black',
     color: '#E1E1E1',
@@ -19,7 +22,7 @@ const navbar: CSSProperties = {
     padding: '0 1em'
 };
 
-const navbarItem: CSSProperties = {
+const headerItem: CSSProperties = {
     fontSize: '1.7em',
     margin: 0,
     padding: 0,
