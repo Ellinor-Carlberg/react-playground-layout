@@ -1,23 +1,16 @@
 import React, { CSSProperties } from 'react';
-import NavigationItem from './NavigationItem';
+import MasterView from './MasterView';
+import { ViewType } from './Layout'
 
-/** React function component */
-export default function ViewContainer() {
-
-    const viewContainerIds = ['forest', 'sky', 'desert'];
-
-    return (
-        <div style={container}>
-            {viewContainerIds.map((value) => <NavigationItem id={value} />)}
-        </div>
-    );
+interface Props {
+    view: "main" | "forest" | "sky" | "desert" 
+    onNavigateToDetailView: (view: ViewType) => void
 }
 
-const container: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    margin: '0.5em',
-    justifyItems: 'stretch',
-    alignItems: 'stretch'
+/** React function component */
+export default function ViewContainer(props: Props) {
+    if (props.view === 'main') {
+        return <MasterView onNavigationItemClick={props.onNavigateToDetailView}/>  
+}
+return >DetailView />
 }

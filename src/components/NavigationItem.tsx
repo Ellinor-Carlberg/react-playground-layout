@@ -1,14 +1,22 @@
 import React, { CSSProperties } from 'react';
 import { centeredViewContanier } from '../css';
 
+interface Props {
+    view: string
+    onClick: () => void
+}
+
+
 /** React function component */
 export default function NavigationItem(props: Props) {
-    const imageSrc = `../assets/${props.id}.jpg`;
+    const imageSrc = `../assets/${props.view}.jpg`;
+
+    const onClick = () => props.onClick(props.view)>
 
     return (
-        <div style={{ ...gridItem, ...centeredViewContanier }}>
+        <div onClick={props.onClick} style={{ ...gridItem, ...centeredViewContanier }}>
             <img src={imageSrc} style={fullscreen} />
-            <h1 style={{ ...centeredAbsolute, ...appearance}}>{props.id}</h1>
+            <h1 style={{ ...centeredAbsolute, ...appearance}}>{props.view}</h1>
         </div>
     );
 }
