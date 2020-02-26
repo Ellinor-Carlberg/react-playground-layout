@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
-import Header from './header';
-import Content from './content';
+import Navbar from './Navbar';
+import ViewContainer from './ViewContainer';
 import { fullScreen } from '../css';
 
 /** React function component */
@@ -8,8 +8,8 @@ export default function Layout() {
 
     return (
         <div style={{ ...columnFlex, ...fullScreen, ...background }}>
-            <Header/>
-            <Content/>
+            <Navbar/>
+            <ViewContainer/>
         </div>
     );
 }

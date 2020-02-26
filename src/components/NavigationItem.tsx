@@ -1,12 +1,12 @@
 import React, { CSSProperties } from 'react';
-import { centeredContent } from '../css';
+import { centeredViewContanier } from '../css';
 
 /** React function component */
-export default function SectionItem(props: Props) {
+export default function NavigationItem(props: Props) {
     const imageSrc = `../assets/${props.id}.jpg`;
 
     return (
-        <div style={{ ...gridItem, ...centeredContent }}>
+        <div style={{ ...gridItem, ...centeredViewContanier }}>
             <img src={imageSrc} style={fullscreen} />
             <h1 style={{ ...centeredAbsolute, ...appearance}}>{props.id}</h1>
         </div>

@@ -1,14 +1,14 @@
 import React, { CSSProperties } from 'react';
-import SectionItem from './sectionItem';
+import NavigationItem from './NavigationItem';
 
 /** React function component */
-export default function Content() {
+export default function ViewContainer() {
 
-    const sectionIds = ['forest', 'sky', 'desert'];
+    const viewContainerIds = ['forest', 'sky', 'desert'];
 
     return (
         <div style={container}>
-            {sectionIds.map((value) => <SectionItem id={value} />)}
+            {viewContainerIds.map((value) => <NavigationItem id={value} />)}
         </div>
     );
 }

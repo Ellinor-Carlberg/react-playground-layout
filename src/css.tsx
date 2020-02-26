@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export const centeredContent: CSSProperties = {
+export const centeredViewContanier: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
