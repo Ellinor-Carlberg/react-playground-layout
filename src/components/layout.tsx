@@ -1,38 +1,29 @@
-import React, { CSSProperties } from 'react';
-import Navbar from './Navbar';
-import ViewContainer from './ViewContainer';
+import React, { Component, CSSProperties } from 'react';
+import Navbar from './navbar';
+import ViewContainer from './viewContainer/viewContainer';
 import { fullScreen } from '../css';
 
-
-interface Props {
-view: ViewType
-onClick (view: ViewType )
-}
-
+interface Props {}
 interface State {
-view: "main" | "forest" | "sky" | "desert" 
+    currentView: string
 }
 
-export type ViewType = "main" | "forest" | "sky" | "desert" 
+/** React class component */
+export default class Layout extends Component<Props, State> {
 
-/** React function component */
-export default class Layout extends React.Component<Props, State> {
-constructor(props: Props) {
-    super(props)
-    this.state = { view: "sky" } 
-}
-navigateToMain = () => {
-this.setState({view: 'main' })
-}
-navigateToDetailView = (view: ViewType) => {
-    this.setState({view: view as any })
+    state = {
+        currentView: ''
+    };
+
+    setView = (view: string) => {
+        this.setState({ currentView: view });
     }
 
     render() {
-    return (
+        return (
             <div style={{ ...columnFlex, ...fullScreen, ...background }}>
-                <Navbar onClickHeader={this.navigateToMain}/>
-                <ViewContainer view={this.state.view} onNavigateToDetailView={this.navigateToDetailView} />
+                <Navbar onViewSelected={this.setView}/>
+                <ViewContainer currentView={this.state.currentView} onViewSelected={this.setView}/>
             </div>
         );
     }

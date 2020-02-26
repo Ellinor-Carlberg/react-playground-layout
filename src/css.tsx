@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-export const centeredViewContanier: CSSProperties = {
+export const centeredContent: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -11,4 +11,11 @@ export const centeredViewContanier: CSSProperties = {
 export const fullScreen: CSSProperties = {
     width: '100%',
     height: '100%'
+}
+
+export const fullscreenAbsolute: CSSProperties = {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover'
 }

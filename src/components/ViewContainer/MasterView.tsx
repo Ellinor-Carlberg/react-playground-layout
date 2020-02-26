@@ -1,23 +1,19 @@
 import React, { CSSProperties } from 'react';
 import NavigationItem from './NavigationItem';
-import { ViewType } from './Layout'
 
 interface Props {
-    view: "main" | "forest" | "sky" | "desert" 
-    onNavigationItemClick: () => void
+    detailViews: string[]
+    onDetaltViewSelected: (view: string) => void;
 }
 
+/** React function component */
 export default function MasterView(props: Props) {
-    const navigationIds viewType[] = ['forest', 'sky', 'desert'];
 
     return (
         <div style={container}>
-            {navigationIds.map((value) => 
-            <NavigationItem view={value}  onClick={} />)}
+            {props.detailViews.map((value) => <NavigationItem id={value} onClick={props.onDetaltViewSelected} />)}
         </div>
     );
-
-
 }
 
 const container: CSSProperties = {
@@ -26,5 +22,6 @@ const container: CSSProperties = {
     height: '100%',
     margin: '0.5em',
     justifyItems: 'stretch',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
+    gridTemplateColumns: '50% 50%',
 }
